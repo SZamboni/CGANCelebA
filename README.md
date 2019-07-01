@@ -38,8 +38,8 @@ This architecture has all the advantages we were looking for: it is more stable 
 
 Final results after 10 epochs of training, in the first two rows there should be female with non black hair, then female with black hair, then male with non black hair and finally male with black hair.
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-black.png | width=128)
+<img src="https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-black.png " width="524">
 
 Final results after 10 epochs of training, in the first two rows there should be female non smiling, then female smiling, then male non smiling and finally male smiling:
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png =250x250)
+<img src="https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png " width="524">
