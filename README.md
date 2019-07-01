@@ -41,4 +41,4 @@ Final results after 10 epochs of training, in the first two rows there should be
 
 Final results after 10 epochs of training, in the first two rows there should be female non smiling, then female smiling, then male non smiling and finally male smiling:
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png | width=128)
+![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png =250x250)
