@@ -16,7 +16,7 @@ Each channel contains only ones or zeros depending on the label: for example 01 
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/BaseArchD.png)
 
 With this architecture generated images were blurry, contours were not well defined and worked only with very discriminative labels like male/female. We tried to modify it in order to use two labels instead of one, increasing the dimension of the label channels from 2 to 4, but the network did not converge and the output was only noise, as you can see in the following picture using the label Male(on the bottom four rows)/Female(on the top four rows), obtained after 10 epochs of training on Google Colab (around 7 hours of training):
-
+<img src="https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png" width=128>
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png  | width=128)
 # Our Architecture
 
