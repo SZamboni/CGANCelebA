@@ -16,6 +16,7 @@ Each channel contains only ones or zeros depending on the label: for example 01 
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/BaseArchD.png)
 
 With this architecture generated images were blurry, contours were not well defined and worked only with very discriminative labels like male/female. We tried to modify it in order to use two labels instead of one, increasing the dimension of the label channels from 2 to 4, but the network did not converge and the output was only noise, as you can see in the following picture using the label Male(on the bottom four rows)/Female(on the top four rows), obtained after 10 epochs of training on Google Colab (around 7 hours of training):
+
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png)
 # Our Architecture
 
@@ -29,13 +30,15 @@ Using the base architecture with the one-hot encoding on multiple labels and the
 
 # Final Architecture
 Our final architecture is the base architecture modified to use more than one label both in the generator and in the discriminator using the one-hot encoding, with some additional features:
- More convolutions of the label in the generator
- Categorical batch normalization in the generator
- Spectral normalization in the discriminator.
+* More convolutions of the label in the generator
+* Categorical batch normalization in the generator
+* Spectral normalization in the discriminator.
 This architecture has all the advantages we were looking for: it is more stable (in a sense that the loss of the discriminator evaluating the generated images is more or less constant), it is able to produce good quality faces with well defined traits and is able to correctly differentiate between labels.
 
 Final results after 10 epochs of training, in the first two rows there should be female with non black hair, then female with black hair, then male with non black hair and finally male with black hair.
+
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-black.png)
 
 Final results after 10 epochs of training, in the first two rows there should be female non smiling, then female smiling, then male non smiling and finally male smiling:
+
 ![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png)
