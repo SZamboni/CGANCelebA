@@ -17,7 +17,7 @@ Each channel contains only ones or zeros depending on the label: for example 01 
 
 With this architecture generated images were blurry, contours were not well defined and worked only with very discriminative labels like male/female. We tried to modify it in order to use two labels instead of one, increasing the dimension of the label channels from 2 to 4, but the network did not converge and the output was only noise, as you can see in the following picture using the label Male(on the bottom four rows)/Female(on the top four rows), obtained after 10 epochs of training on Google Colab (around 7 hours of training):
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png)
+![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png  | width=128)
 # Our Architecture
 
 # Spectral Normalization
@@ -37,8 +37,8 @@ This architecture has all the advantages we were looking for: it is more stable 
 
 Final results after 10 epochs of training, in the first two rows there should be female with non black hair, then female with black hair, then male with non black hair and finally male with black hair.
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-black.png)
+![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-black.png | width=128)
 
 Final results after 10 epochs of training, in the first two rows there should be female non smiling, then female smiling, then male non smiling and finally male smiling:
 
-![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png)
+![alt text](https://github.com/SZamboni/CGANCelebA/blob/master/images/FinalM-F-smile.png | width=128)
