@@ -1,11 +1,11 @@
-# CGANCelebA
-Conditional GAN project for the Deep Learning course of 2019 held by professor Elisa RIcci, done by Filippo Bordon, Olivier Nicolini and me.
+# CGAN CelebA
+Conditional Generative Adversarial Networks(CGAN) project for the Deep Learning course of 2019 held by professor Elisa Ricci, done by Filippo Bordon, Olivier Nicolini and Simone Zamboni.
 Our objective in this project was to design a GAN able to produce images of faces conditioned with different labels. More specifically we wanted to take an already existing architecture, modify it and obtain better results generating faces conditioned by some specifics attributes.
 
-# Dataset
+## Dataset
 For our project we used CelebA, a widely used dataset for faces, that contains more than 200k faces of famous people. The images used are cropped on the faces, and re-sized at 64x64 pixels. Each one of these images has 40 binary labels.
 
-# Starting architecture
+## Starting architecture
 As starting architecture a modified version of the DCGAN that uses one label in the one-hot encoding was used.
 The generator takes as input the noise vector and a vector of two elements where the label is encoded in one-hot fashion.
 Both inputs are deconvoluted separately, concatenated and then deconvoluted together until a 64x64 image is obtained.
@@ -19,17 +19,17 @@ With this architecture generated images were blurry, contours were not well defi
 
 <img src="https://github.com/SZamboni/CGANCelebA/blob/master/images/baseres.png" width="524">
 
-# Our Architecture
+## Our Modifications
 
-# Spectral Normalization
+### Spectral Normalization
 In order to increase the quality of the images and the stability of the training we introduced spectral normalization in the discriminator.
 Using the base architecture with the one-hot encoding on multiple labels with the addition of the spectral normalization in the discriminator we were able to obtain images more defined. Faces were better defined, but the network was not able to distinguish properly between labels: we needed a way for the network to differentiate more between labels.
 
-# Categorical Batch Normalization
+### Categorical Batch Normalization
 Categorical batch normalization is a type of batch normalization that changes the normalization parameters based on the input category. It is applied to the generator and for every combination of labels we assign a different category; for example the generation of females with black hair and of females with non black hair will use different batch normalization parameters.This approach has the advantage that the network differentiate more between the various labels but it also adds more parameters to compute, slowing down the training.
 Using the base architecture with the one-hot encoding on multiple labels and the conditional batch normalization we obtained results respecting more the labels, but images were not as defined as when using spectral normalization, but these approaches can be combined.
 
-# Final Architecture
+## Final Architecture
 Our final architecture is the base architecture modified to use more than one label both in the generator and in the discriminator using the one-hot encoding, with some additional features:
 * More convolutions of the label in the generator
 * Categorical batch normalization in the generator
